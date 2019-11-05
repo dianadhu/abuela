@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-	erb :index
+	erb :codigo
 end
 
 post '/abuelita' do
