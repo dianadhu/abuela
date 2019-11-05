@@ -1,17 +1,13 @@
 require 'sinatra'
 
-name = ""
-
 get '/' do
-  erb :codigo
+  erb :index
 end
 
-get '/page' do
-  @name = name
-  erb :page
-end
-
-post '/page' do
-  name = params[:name]
-  redirect '/page'
+get '/respuesta' do
+  if params[:resp]==params[:resp].upcase
+  erb :upcase
+  else
+  erb :others
+  end
 end
