@@ -1,15 +1,17 @@
 require 'sinatra'
 
+name = ""
+
 get '/' do
-	erb :codigo
+  erb :codigo
 end
 
-post '/abuelita' do
-	if params[:queDijo] == params[:queDijo].upcase && params[:queDijo] != ""
-		"Ahhh si, manzanas!"
-		else
-		<<-HTML
-		<h1>Habla más duro mijito</h1>
-		HTML
-	end
+get '/page' do
+  @name = name
+  erb :page
+end
+
+post '/page' do
+  name = params[:name]
+  redirect '/page'
 end
